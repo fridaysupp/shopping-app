@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlack"
+    tools:context=".SignupFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/sign_up_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:padding="16dp"
+            android:src="@mipmap/close_cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="167dp"
+            android:layout_height="137dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:src="@mipmap/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07999998" />
+
+        <EditText
+            android:id="@+id/sign_up_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#70ffffff"
+            android:ems="10"
+            android:hint="Email Id"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHint="#70ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <EditText
+            android:id="@+id/sign_up__full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#70ffffff"
+            android:ems="10"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="#70ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_email" />
+
+        <EditText
+            android:id="@+id/sign_up_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#70ffffff"
+            android:ems="10"
+            android:textColor="@color/white"
+            android:hint="Password (at least 8 character)"
+            android:inputType="textPassword"
+            android:textColorHint="#70ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up__full_name" />
+
+        <EditText
+            android:id="@+id/sign_up_confrim_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#70ffffff"
+            android:ems="10"
+            android:textColor="@color/white"
+            android:hint="Confirm Pasword"
+            android:inputType="textPassword"
+            android:textColorHint="#70ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password" />
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/btnGrey"
+            android:text="Sign Up!"
+            android:enabled="false"
+            android:textAllCaps="false"
+            android:textColor="#50ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_confrim_password"
+            app:layout_constraintVertical_bias="0.24000001" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="or"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_btn" />
+
+        <TextView
+            android:id="@+id/sign_up_already_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Already have an account?Sign In!"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <ProgressBar
+            android:id="@+id/sign_up_progressbar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/sign_up_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_confrim_password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

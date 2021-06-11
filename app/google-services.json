@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "728728037567",
+    "project_id": "friday-online-shopping",
+    "storage_bucket": "friday-online-shopping.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728728037567:android:07c68c57cfb53230a7fe0a",
+        "android_client_info": {
+          "package_name": "com.example.fridaye_com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728728037567-kodaoh5uii3imacussgr5g2npq1civrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIxMdwyoiAlIMErlnlveGDQLTttpDz6zA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728728037567-kodaoh5uii3imacussgr5g2npq1civrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

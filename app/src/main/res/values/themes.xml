@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FRIDAYECOM" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/darkBlack</item>
+        <item name="colorPrimaryVariant">@color/darkBlack</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/darkBlack</item>
+        <item name="colorPrimaryVariant">@color/darkBlack</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@drawable/splash_activity_background</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="RedProgressbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/btnRed</item>
+        <item name="colorPrimaryVariant">@color/btnRed</item>
+        <item name="colorOnPrimary">@color/btnRed</item>
+    </style>
+
+    <style name="Theme.FRIDAYECOM.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.FRIDAYECOM.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.FRIDAYECOM.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

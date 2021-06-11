@@ -1,0 +1,2 @@
+rootProject.name = "FRIDAY E-COM"
+include ':app'
