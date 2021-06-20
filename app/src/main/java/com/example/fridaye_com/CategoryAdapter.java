@@ -1,5 +1,6 @@
-package com.example.fridaye_com.ui.home;
+package com.example.fridaye_com;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fridaye_com.R;
+import com.example.fridaye_com.ui.home.HomeViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -35,7 +36,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public void onBindViewHolder(@NonNull @NotNull CategoryAdapter.ViewHolder holder, int position) {
         String icon = categoryModelList.get(position).getCategoryIconLink();
         String iconName = categoryModelList.get(position).getCategoryName();
-        holder.setCategoryName(iconName);
+        holder.setCategory(iconName,position);
     }
 
     @Override
@@ -55,8 +56,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         private void setCategoryIcon(){
             //todo:set categoryIcons Here
         }
-        private void setCategoryName(String name){
+        private void setCategory(final String name,int position){
             categoryName.setText(name);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(position != 0){
+                    Intent categoryIntent = new Intent(itemView.getContext(),CategoryActivity.class);
+                    categoryIntent.putExtra("CategoryName",name);
+                    itemView.getContext().startActivity(categoryIntent);
+                    }
+                }
+            });
+
         }
     }
 }

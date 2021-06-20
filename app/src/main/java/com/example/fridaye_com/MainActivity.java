@@ -9,6 +9,8 @@ import com.example.fridaye_com.ui.home.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.TaskStackBuilder;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
@@ -23,86 +25,85 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.fridaye_com.databinding.ActivityMainBinding;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
+
     private FrameLayout frameLayout;
+    private static final int HOME_FRAGMENT = 0;
+    private static final int CART_FRAGMENT = 1;
+    private NavigationView navigationView;
+
+    private static int currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_main );
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
+        setSupportActionBar( toolbar );
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
 
-        setSupportActionBar(binding.appBarMain.toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        DrawerLayout drawer = findViewById( R.id.drawer_layout );
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle( this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close );
+        drawer.addDrawerListener( toggle );
+        toggle.syncState();
 
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView = (NavigationView) findViewById( R.id.nav_view );
+        navigationView.setNavigationItemSelectedListener( this );
+        navigationView.getMenu().getItem( 0 ).setChecked( true );
 
-        navigationView.getMenu().getItem(0).setChecked(true);
-
-        frameLayout = findViewById(R.id.main_frame_layout);
-        setFragment(new HomeFragment());
+        frameLayout = findViewById( R.id.main_frame_layout );
+        setFragment( new HomeFragment(), HOME_FRAGMENT );
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        if (currentFragment == HOME_FRAGMENT) {
+            getMenuInflater().inflate( R.menu.main, menu );
+        }
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
         if (id == R.id.main_search_icon) {
             //todo:search
             return true;
         } else if (id == R.id.main_notification_icon) {
             //todo:notification
+            return true;
         } else if (id == R.id.main_cart_icon) {
-            //todo:cart
+            myCart();
+            return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected( item );
     }
 
-    @Override
-    public void onCreateSupportNavigateUpTaskStack(@NonNull  TaskStackBuilder builder) {
-        super.onCreateSupportNavigateUpTaskStack(builder);
-    }
+    private void myCart() {
+        invalidateOptionsMenu();
+        setFragment( new MyCartFragment(), CART_FRAGMENT );
+        navigationView.getMenu().getItem(3).setChecked( true );
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
     }
-
     @SuppressWarnings("StatmentWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(@NonNull  MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_my_home) {
-
+            setFragment( new HomeFragment(), HOME_FRAGMENT );
         } else if (id == R.id.nav_my_orders) {
 
         } else if (id == R.id.nav_my_rewards) {
 
         } else if (id == R.id.nav_my_cart) {
-
+            myCart();
         } else if (id == R.id.nav_my_wishlist) {
 
         } else if (id == R.id.nav_my_account) {
@@ -110,12 +111,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_sign_out) {
 
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        DrawerLayout drawer = (DrawerLayout) findViewById( R.id.drawer_layout );
+        drawer.closeDrawer( GravityCompat.START );
         return true;
     }
-    private void setFragment(Fragment fragment){
-        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(frameLayout.getId(),fragment);
+
+    private void setFragment(Fragment fragment, int fragmentNo) {
+        currentFragment = fragmentNo;
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace( frameLayout.getId(), fragment );
     }
 }

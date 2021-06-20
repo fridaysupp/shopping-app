@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_details_only_layout"
+    android:elevation="3dp"
+    android:background="@color/white"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/product_details_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#d4d4d4"
+        android:padding="16dp"
+        android:text="Product Details"
+        android:textColor="#9c9c9c"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/product_details_body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Colour:Shadow Black | Size name:64 GB FHD+ 1080x2400),
+        6.43 inch large AMOLED Dot display with 20:9 aspect ratio ensures superior multimedia viewing experience .
+        Qualcomm Snapdragon 678 octa-core processor with 11nm process technology coupled with latest MIUI 12
+        Based On Android 11) enables low power consumption for
+         a longer battery life and immersive user experience as well
+          as great performance. 48MP Quad camera setup facilitates
+          user to capture high resolution photographs with greater
+          detail in almost all lighting conditions as well as scenarios.
+          Comes with support for Ultra wide, Macro and Portrait with
+          several modes in the camera app which enhances the photography
+          experience. Massive 5000 mAh battery bundled with 33W fast
+          charger in-box boosts the charging speed as well as provides
+          great battery backup Note:Incase of any issue with the product,
+           kindly contact brand at 1800 103 6286 between Service hours: 09:00-21:00."
+        android:padding="16dp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_details_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>
