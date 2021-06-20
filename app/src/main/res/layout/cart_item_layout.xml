@@ -36,7 +36,7 @@
         android:layout_height="16dp"
         app:layout_constraintStart_toStartOf="@+id/product_title"
         app:layout_constraintTop_toBottomOf="@+id/product_title"
-        app:srcCompat="@drawable/ic_baseline_local_offer_24"
+        app:srcCompat="@drawable/offer"
         app:tint="#8000FF" />
 
     <TextView
