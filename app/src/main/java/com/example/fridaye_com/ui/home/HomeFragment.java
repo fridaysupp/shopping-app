@@ -66,9 +66,9 @@ public class HomeFragment extends Fragment {
        List<SliderModel> sliderModelArrayList = new ArrayList<SliderModel>();
 
                 sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-                sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-                sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-                sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
+                sliderModelArrayList.add(new SliderModel(R.mipmap.custom_error_icon,"#007AE4"));
+                sliderModelArrayList.add(new SliderModel(R.mipmap.bell,"#007AE4"));
+                sliderModelArrayList.add(new SliderModel(R.mipmap.cart_black,"#007AE4"));
                 sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
         ////////////////// Banner Slider
 
@@ -104,6 +104,14 @@ public class HomeFragment extends Fragment {
         homePageModelList.add(new HomePageModel(1,R.mipmap.cart_black,"#ffff00"));
         homePageModelList.add(new HomePageModel(2,"Deals of the day",horizontalProductModelList));
         homePageModelList.add(new HomePageModel(3,"Deals of the day",horizontalProductModelList));
+        homePageModelList.add(new HomePageModel(0,sliderModelArrayList));
+        homePageModelList.add(new HomePageModel(1,R.drawable.banner_image,"#000000"));
+        homePageModelList.add(new HomePageModel(2,"Deals of the day",horizontalProductModelList));
+        homePageModelList.add(new HomePageModel(3,"Deals of the day",horizontalProductModelList));
+        homePageModelList.add(new HomePageModel(1,R.mipmap.cart_black,"#ffff00"));
+        homePageModelList.add(new HomePageModel(2,"Deals of the day",horizontalProductModelList));
+        homePageModelList.add(new HomePageModel(3,"Deals of the day",horizontalProductModelList));
+
 
         HomePageAdapter adapter = new HomePageAdapter(homePageModelList);
         testing.setAdapter(adapter);

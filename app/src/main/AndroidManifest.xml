@@ -14,11 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FRIDAYECOM">
+        <activity android:name=".ViewAllActivity"></activity>
+        <activity android:name=".MyAddressesActivity" />
+        <activity android:name=".AddAddressActivity" />
+        <activity android:name=".addressActivity" />
+        <activity android:name=".DeliveryActivity" />
+        <activity android:name=".OrderDetialsActivity" />
         <activity
             android:name=".ProductDetailsActivity"
             android:label=""
-            android:theme="@style/Theme.FRIDAYECOM"/>
-
+            android:theme="@style/Theme.FRIDAYECOM" />
         <activity android:name=".CategoryActivity" />
         <activity
             android:name=".MainActivity"

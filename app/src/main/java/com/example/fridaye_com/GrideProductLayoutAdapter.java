@@ -22,7 +22,7 @@ public class GrideProductLayoutAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return horizontalProductModelList.size();
     }
 
     @Override
