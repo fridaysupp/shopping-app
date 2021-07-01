@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.fridaye_com.ui.home.HomeViewModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -37,6 +39,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         String icon = categoryModelList.get(position).getCategoryIconLink();
         String iconName = categoryModelList.get(position).getCategoryName();
         holder.setCategory(iconName,position);
+        holder.setCategoryIcon( icon );
     }
 
     @Override
@@ -53,8 +56,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             categoryName = itemView.findViewById(R.id.category_name);
 
         }
-        private void setCategoryIcon(){
-            //todo:set categoryIcons Here
+        private void setCategoryIcon(String iconUrl){
+            if (!iconUrl.equals( "null" )) {
+                Glide.with( itemView.getContext()).load(iconUrl).apply(new RequestOptions().placeholder(R.mipmap.home_icon)).into(categoryIcon);
+            }
         }
         private void setCategory(final String name,int position){
             categoryName.setText(name);

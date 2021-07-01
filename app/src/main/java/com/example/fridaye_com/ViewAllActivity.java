@@ -55,15 +55,7 @@ public class ViewAllActivity extends AppCompatActivity {
 
             gridView.setVisibility( View.VISIBLE );
             List<HorizontalProductModel> horizontalProductModelList = new ArrayList<>();
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
-            horizontalProductModelList.add( new HorizontalProductModel( R.drawable.phone, "Redmi 5A", "SA 625 processor", "Rs.6999" ) );
+
 
             ///////////Horizontal Product Layout
             GrideProductLayoutAdapter grideProductLayoutAdapter = new GrideProductLayoutAdapter( horizontalProductModelList );

@@ -8,21 +8,21 @@ public class HomeViewModel extends ViewModel {
 
 
 
-    private String CategoryIconLink;
+    private String categoryIcon;
     private String categoryName;
 
-    public HomeViewModel(String categoryIconLink, String categoryName) {
-        CategoryIconLink = categoryIconLink;
+    public HomeViewModel(String categoryIcon, String categoryName) {
+        this.categoryIcon = categoryIcon;
         this.categoryName = categoryName;
 
     }
 
     public String getCategoryIconLink() {
-        return CategoryIconLink;
+        return categoryIcon;
     }
 
     public void setCategoryIconLink(String categoryIconLink) {
-        CategoryIconLink = categoryIconLink;
+        categoryIcon = categoryIconLink;
     }
 
     public String getCategoryName() {

@@ -39,26 +39,13 @@ public class CategoryActivity extends AppCompatActivity {
         ////////////////// Banner Slider
         List<SliderModel> sliderModelArrayList = new ArrayList<SliderModel>();
 
-        sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-        sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-        sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-        sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
-        sliderModelArrayList.add(new SliderModel(R.mipmap.home_icon,"#007AE4"));
+
         ////////////////// Banner Slider
 
 
 
         ///////////Horizontal Product Layout
 
-        List <HorizontalProductModel> horizontalProductModelList= new ArrayList<>();
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
-        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.phone,"Redmi 5A","SA 625 processor","Rs.6999"));
 
         ///////////Horizontal Product Layout
 
@@ -69,13 +56,7 @@ public class CategoryActivity extends AppCompatActivity {
         categoryRecyclerView.setLayoutManager(testingLayoutManager);
 
         List<HomePageModel> homePageModelList = new ArrayList<>();
-        homePageModelList.add(new HomePageModel(0,sliderModelArrayList));
-        homePageModelList.add(new HomePageModel(1,R.drawable.banner_image,"#000000"));
-        homePageModelList.add(new HomePageModel(2,"Deals of the day",horizontalProductModelList));
-        homePageModelList.add(new HomePageModel(3,"Deals of the day",horizontalProductModelList));
-        homePageModelList.add(new HomePageModel(1,R.mipmap.cart_black,"#ffff00"));
-        homePageModelList.add(new HomePageModel(2,"Deals of the day",horizontalProductModelList));
-        homePageModelList.add(new HomePageModel(3,"Deals of the day",horizontalProductModelList));
+
 
         HomePageAdapter adapter = new HomePageAdapter(homePageModelList);
         categoryRecyclerView.setAdapter(adapter);
