@@ -45,9 +45,13 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         holder.itemView.getContext();
         String  ColorString = sliderModelItems.get( position ).getBackgroundColor();
+
+        //todo:change place holder icon
         Glide.with( holder.itemView.getContext() ).load( sliderModelItems.get( position ).getBanner() )
                 .apply( new RequestOptions().placeholder( R.mipmap.home_icon ) ).into( holder.imageView );
-         holder.setBannerColor(ColorString );
+        //todo:change place holder icon
+
+        holder.setBannerColor(ColorString );
         if (position == sliderModelItems.size() - 2) {
             viewPager2.post( runnable );
         }

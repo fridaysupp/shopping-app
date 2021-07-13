@@ -38,11 +38,8 @@ private RecyclerView myWishListRecyclerView;
         myWishListRecyclerView.setLayoutManager( linearLayoutManager );
 
         List<WishListModel> wishListModelsList = new ArrayList<>();
-        wishListModelsList.add( new WishListModel( R.drawable.phone ,"Pixel 2 Black",2,"3",145,"Rs.5999/-","Rs.5999/-","COD available") );
-        wishListModelsList.add( new WishListModel( R.drawable.phone ,"Pixel 2 Black",0,"3",145,"Rs.5999/-","Rs.5999/-","COD available") );
-        wishListModelsList.add( new WishListModel( R.drawable.phone ,"Pixel 2 Black",1,"3",145,"Rs.5999/-","Rs.5999/-","COD available") );
-        wishListModelsList.add( new WishListModel( R.drawable.phone ,"Pixel 2 Black",3,"3",145,"Rs.5999/-","Rs.5999/-","COD available") );
-        wishListModelsList.add( new WishListModel( R.drawable.phone ,"Pixel 2 Black",1,"3",145,"Rs.5999/-","Rs.5999/-","COD available") );
+
+
         WishListAdapter wishListAdapter= new WishListAdapter( wishListModelsList ,true);
         myWishListRecyclerView.setAdapter( wishListAdapter );
         wishListAdapter.notifyDataSetChanged();

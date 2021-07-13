@@ -36,7 +36,7 @@
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="@color/recyclerViewBackground"
         android:horizontalSpacing="1dp"
         android:numColumns="auto_fit"

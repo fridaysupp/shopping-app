@@ -3,6 +3,7 @@ package com.example.fridaye_com.ui.home;
 import java.util.List;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.fridaye_com.WishListModel;
 import com.example.fridaye_com.ui.home.HorizontalProductModel;
 import com.example.fridaye_com.ui.home.SliderModel;
 
@@ -60,15 +61,37 @@ public class HomePageModel {
     /////////// Strip Ad
 
 
-    ///////////Horizontal Product Layout && Grid Product Layout
     private String title;
     private List<HorizontalProductModel> horizontalProductModelList;
-    public HomePageModel(int type, String title,String backgroundColor, List<HorizontalProductModel> horizontalProductModelList) {
+    ///////////Horizontal Product Layout && Grid Product Layout
+    private List<WishListModel> wishListModelList;
+
+    public HomePageModel(int type, String title, String backgroundColor, List<HorizontalProductModel> horizontalProductModelList, List<WishListModel> wishListModelList) {
+        this.type = type;
+        this.title = title;
+        this.backgroundColor=backgroundColor;
+        this.horizontalProductModelList = horizontalProductModelList;
+        this.wishListModelList = wishListModelList;
+    }
+
+    public List<WishListModel> getWishListModelList() {
+        return wishListModelList;
+    }
+
+    public void setWishListModelList(List<WishListModel> wishListModelList) {
+        this.wishListModelList = wishListModelList;
+    }
+    ///////////Horizontal Product Layout
+
+    ///////////Grid Product Layout
+    public HomePageModel(int type, String title, String backgroundColor, List<HorizontalProductModel> horizontalProductModelList) {
         this.type = type;
         this.title = title;
         this.backgroundColor=backgroundColor;
         this.horizontalProductModelList = horizontalProductModelList;
     }
+    ///////////Grid Product Layout
+
     public String getTitle() {
         return title;
     }
@@ -81,7 +104,6 @@ public class HomePageModel {
     public void setHorizontalProductModelList(List<HorizontalProductModel> horizontalProductModelList) {
         this.horizontalProductModelList = horizontalProductModelList;
     }
-    ///////////Horizontal Product Layout && Grid Product Layout
 
 
 

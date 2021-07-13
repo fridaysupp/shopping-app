@@ -22,11 +22,12 @@ public class ProductSpecificationFragment extends Fragment {
 
     private RecyclerView productSpecificationRecyclerView;
 
+
     public ProductSpecificationFragment() {
         // Required empty public constructor
     }
 
-
+    public static List<ProductSpecificationModel> productSpecificationModelList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,30 +39,22 @@ public class ProductSpecificationFragment extends Fragment {
         linearLayoutManager.setOrientation( LinearLayoutManager.VERTICAL );
         productSpecificationRecyclerView.setLayoutManager( linearLayoutManager );
 
-        List<ProductSpecificationModel> productSpecificationModelList = new ArrayList<>();
-        productSpecificationModelList.add( new ProductSpecificationModel( 0,"General" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 0,"Display" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
-        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 0,"General" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 0,"Display" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
+//        productSpecificationModelList.add( new ProductSpecificationModel( 1,"RAM", "4 GB" ) );
 
-
-
-
-
-
-
-
-        ProductSpecificationAdapter productSpecificationAdapter = new ProductSpecificationAdapter( productSpecificationModelList );
+        ProductSpecificationAdapter productSpecificationAdapter = new ProductSpecificationAdapter(productSpecificationModelList );
         productSpecificationRecyclerView.setAdapter( productSpecificationAdapter );
         productSpecificationAdapter.notifyDataSetChanged();
         return view;

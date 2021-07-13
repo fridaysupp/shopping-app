@@ -6,6 +6,8 @@
     <dist:module dist:instant="true" />
 
     <uses-permission android:name="android.permission.INTERNET*" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -17,7 +19,6 @@
         <activity android:name=".ViewAllActivity"></activity>
         <activity android:name=".MyAddressesActivity" />
         <activity android:name=".AddAddressActivity" />
-        <activity android:name=".addressActivity" />
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".OrderDetialsActivity" />
         <activity

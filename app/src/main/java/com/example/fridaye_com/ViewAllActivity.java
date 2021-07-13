@@ -19,6 +19,9 @@ import java.util.List;
 public class ViewAllActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private GridView gridView;
+    public static  List <HorizontalProductModel> horizontalProductModelList ;
+    public static  List<WishListModel> wishListModelsList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class ViewAllActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
         getSupportActionBar().setDisplayShowTitleEnabled( true );
-        getSupportActionBar().setTitle( "Deals of the Day" );
+        getSupportActionBar().setTitle(getIntent().getStringExtra( "title" ) );
         getSupportActionBar().setDisplayHomeAsUpEnabled( true );
 
         recyclerView=findViewById( R.id.recyclerview_view_all_activity );
@@ -39,24 +42,12 @@ public class ViewAllActivity extends AppCompatActivity {
             layoutManager.setOrientation( LinearLayoutManager.VERTICAL );
             recyclerView.setLayoutManager( layoutManager );
 
-
-            List<WishListModel> wishListModelsList = new ArrayList<>();
-            wishListModelsList.add( new WishListModel( R.drawable.phone, "Pixel 2 Black", 2, "3", 145, "Rs.5999/-", "Rs.5999/-", "COD available" ) );
-            wishListModelsList.add( new WishListModel( R.drawable.phone, "Pixel 2 Black", 0, "3", 145, "Rs.5999/-", "Rs.5999/-", "COD available" ) );
-            wishListModelsList.add( new WishListModel( R.drawable.phone, "Pixel 2 Black", 1, "3", 145, "Rs.5999/-", "Rs.5999/-", "COD available" ) );
-            wishListModelsList.add( new WishListModel( R.drawable.phone, "Pixel 2 Black", 3, "3", 145, "Rs.5999/-", "Rs.5999/-", "COD available" ) );
-            wishListModelsList.add( new WishListModel( R.drawable.phone, "Pixel 2 Black", 1, "3", 145, "Rs.5999/-", "Rs.5999/-", "COD available" ) );
-
             WishListAdapter adapter = new WishListAdapter( wishListModelsList, false );
             recyclerView.setAdapter( adapter );
             adapter.notifyDataSetChanged();
         }else if(layout_code == 1) {
 
-
             gridView.setVisibility( View.VISIBLE );
-            List<HorizontalProductModel> horizontalProductModelList = new ArrayList<>();
-
-
             ///////////Horizontal Product Layout
             GrideProductLayoutAdapter grideProductLayoutAdapter = new GrideProductLayoutAdapter( horizontalProductModelList );
             gridView.setAdapter( grideProductLayoutAdapter );

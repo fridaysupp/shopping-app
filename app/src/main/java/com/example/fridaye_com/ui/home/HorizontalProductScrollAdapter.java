@@ -43,11 +43,10 @@ public class HorizontalProductScrollAdapter extends RecyclerView.Adapter<Horizon
     String title= horizontalProductModelList.get(position).getProduct_title();
     String description= horizontalProductModelList.get(position).getProduct_description();
     String price= horizontalProductModelList.get(position).getProduct_price();
+    String productId= horizontalProductModelList.get( position ).getProductID();
 
-    holder.setProductImage(resource);
-    holder.setProductTitle(title);
-    holder.setProductDescription(description);
-    holder.setProductPrice(price);
+    holder.setData(productId,resource,title,description,price);
+
 
     }
 
@@ -75,25 +74,24 @@ public class HorizontalProductScrollAdapter extends RecyclerView.Adapter<Horizon
 
 
             ///Testing code for tablayout & viewpager
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                 Intent intent = new Intent(itemView.getContext(),ProductDetailsActivity.class);
-                 itemView.getContext().startActivity( intent );
-                }
-            });
+
         }
-        private void setProductImage(String resource){
-            Glide.with( itemView.getContext()).load( resource ).apply( new RequestOptions().placeholder( R.mipmap.home_icon ) ).into( productImage );
+        private void setData(final String productId,String resource,String title,String description,String price) {
+            //todo:change place holder icon
+            Glide.with( itemView.getContext() ).load( resource ).apply( new RequestOptions().placeholder( R.mipmap.home_icon ) ).into( productImage );
+            //todo:change place holder icon
+            productTitle.setText( title );
+            productDescription.setText( description );
+            productPrice.setText( "Rs." + price + "/-" );
+            if (!title.equals( "" )){
+                itemView.setOnClickListener( v -> {
+                    Intent intent = new Intent( itemView.getContext(), ProductDetailsActivity.class );
+                    intent.putExtra( "PRODUCT_ID",productId );
+                    itemView.getContext().startActivity( intent );
+                } );
         }
-        private void setProductTitle(String title){
-            productTitle.setText(title);
+
         }
-        private void setProductDescription(String description){
-            productDescription.setText(description);
-        }
-        private void setProductPrice(String price){
-            productPrice.setText("Rs."+price+"/-");
-        }
+
     }
 }
